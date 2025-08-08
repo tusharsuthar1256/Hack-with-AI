@@ -7,9 +7,7 @@ const navitems = [
      {label:"Home",href:'/'},
      {label:"Companions",href:"/companions"},
      {label:"My Journey",href:"/my-journey"},
-
 ]
-
 const Navitems = () => {
 
   const pathnname = usePathname();

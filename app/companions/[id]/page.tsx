@@ -2,7 +2,7 @@
 const page = () => {
   return (
     <div>
-      
+      <h1>xczjugvuy</h1>
     </div>
   )
 }
