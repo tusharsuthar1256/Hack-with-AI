@@ -3,9 +3,9 @@ import React from 'react'
 
 const Subscripition = () => {
   return (
-    <div className='p-4'>
+    <main >
       <PricingTable/>
-    </div>
+    </main>
   )
 }
 
