@@ -1,12 +1,10 @@
 "use client";
 import { cn, configureAssistant, getSubjectColor } from "@/lib/utils";
 import { vapi } from "@/lib/vapi.sdk";
-import { on } from "events";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import soundWaves from "../constants/soundwaves.json";
-import { set } from "zod";
 import { addToSessionHistory } from "@/lib/actions/companion.action";
 
 enum CallStatus {

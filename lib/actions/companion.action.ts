@@ -1,5 +1,4 @@
 'use server'
-import { subjects } from './../../constants/index';
 
 import { auth } from "@clerk/nextjs/server";
 import { createSupabaseClient } from "../supabase";

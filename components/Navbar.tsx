@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 import Navitems from "./Navitems";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-import { Sign } from "crypto";
 
 const Navbar = () => {
   return (
