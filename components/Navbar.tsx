@@ -1,10 +1,12 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Navitems from "./Navitems";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton, UserButton,useAuth } from "@clerk/nextjs";
 
 const Navbar = () => {
+  const {isSignedIn} = useAuth()
   return (
     <nav className="navbar">
       <Link href="/">
@@ -14,15 +16,18 @@ const Navbar = () => {
       </Link>
       <div className="flex items-center gap-8">
           <Navitems/>
-      <SignedOut>
+      {/* <SignedOut>
         <SignInButton>
           <button className="btn-signin">Sign In</button>
         </SignInButton>
       </SignedOut>
       <SignedIn>
         <UserButton/>
-      </SignedIn>
+      </SignedIn> */}
 
+{isSignedIn ? <UserButton/> :  <SignInButton>
+          <button className="btn-signin">Sign In</button>
+        </SignInButton> }
       </div>
     </nav>
   );
