@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Navitems from "./Navitems";
-import { SignedIn, SignedOut, SignInButton, UserButton,useAuth } from "@clerk/nextjs";
+import {  SignInButton, UserButton,useAuth } from "@clerk/nextjs";
 
 const Navbar = () => {
   const {isSignedIn} = useAuth()
