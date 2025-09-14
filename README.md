@@ -4,6 +4,9 @@ A web app where you can create and interact with AI-powered companions for quick
 
 ---
 
+## Deploted Link 
+
+
 ## ✨ Features  
 
 - **Authentication with Clerk**  
