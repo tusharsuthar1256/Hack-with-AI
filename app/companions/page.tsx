@@ -16,9 +16,9 @@ const page = async ({searchParams}:SearchParams) => {
   
   return (
  <main>
-  <section className="flex justify-between gap-4 max-sm:f;ex-col">
+  <section className="flex justify-between gap-4 max-sm:flex-col">
 <h1>Companions Library</h1>
-<div className="flex gap-4">
+<div className="flex gap-4 max-sm:flex-col">
   <SearchInput />
   <SubjectFilter />
 </div>

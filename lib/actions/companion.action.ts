@@ -27,14 +27,16 @@ export const getAllCompanions = async ({limit=10,page=1,subject,topic}:GetAllCom
           .from('companions')
           .select('*');
 
-     if (subject && topic) {
-          query = query.ilike('subject', `%${subject}%`)
-               .or(`topic.ilike.%${topic}%,name.ilike.%${topic}%`);
-     }else if(subject){
-          query = query.ilike('subject', `%${subject}%`);
-     }else if(topic){
-          query = query.or(`topic.ilike.%${topic}%,name.ilike.%${topic}%`);
-     }
+   if (subject && topic) {
+  query = query
+    .ilike("subject", `%${subject}%`)
+    .or(`topic.ilike.%${topic}%,name.ilike.%${topic}%`);
+} else if (subject) {
+  query = query.ilike("subject", `%${subject}%`);
+} else if (topic) {
+  query = query.or(`topic.ilike.%${topic}%,name.ilike.%${topic}%`);
+}
+
 
      query = query.range((page - 1) * limit, page * limit - 1)
 
@@ -128,8 +130,8 @@ export const newCompanionPermissions = async () => {
 
      if (has({plan:'pro'})) {
           return true
-     }else if(has({feature:"3_companion_limit"})){
-          limit = 3;
+     }else if(has({feature:"5_companion_limit"})){
+          limit = 5;
      }else if(has({feature:"10_companion_limit"})){
           limit = 10;
      }
