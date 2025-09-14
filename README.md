@@ -54,6 +54,18 @@ This app solves that by letting you create **companions for each purpose** — t
 
 ---
 
+## Screenshots 
+<img width="1733" height="1501" alt="image" src="https://github.com/user-attachments/assets/952f264b-c0cc-4634-8e0b-4426231cce67" />
+
+<img width="1733" height="952" alt="image" src="https://github.com/user-attachments/assets/250e692f-8a76-4ff8-b24e-60c4e75233be" />
+
+<img width="1733" height="944" alt="image" src="https://github.com/user-attachments/assets/7a5e8561-5bb5-42a8-8328-bc73a0dad4b8" />
+
+<img width="1733" height="944" alt="image" src="https://github.com/user-attachments/assets/55e1cdfc-f056-4384-b025-559c4ea13c2a" />
+
+<img width="1919" height="796" alt="image" src="https://github.com/user-attachments/assets/35f8bc6c-e920-44b4-b622-441c28f59e47" />
+
+
 ## ⚡ Installation & Setup  
 
 Follow these steps to run Companion Hub locally:  
