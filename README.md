@@ -62,8 +62,10 @@ Follow these steps to run Companion Hub locally:
 ```bash
 git clone https://github.com/your-username/companion-hub.git
 cd companion-hub
+```
 
 ### 2. Setup Environment Variables
+```bash
 
 Create a .env.local file in the project root and add:
 
@@ -86,6 +88,7 @@ NEXT_PUBLIC_VAPI_WEB_TOKEN=example-vapi-web-token-123456
 
 # Sentry (optional)
 SENTRY_AUTH_TOKEN=example-sentry-token-123456
+```
 
 scrrenshot :
 Vudeo link : https://drive.google.com/file/d/1_qnAkDCt99n3TGAg6MqT0AEcENC-TR1Q/view?usp=drive_link
