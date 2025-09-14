@@ -4,7 +4,11 @@ A web app where you can create and interact with AI-powered companions for quick
 
 ---
 
-## Deploted Link 
+## PPT Link
+https://gamma.app/docs/Companion-Hub-vg6ns9jnomdga7t
+
+## Deploted Link
+lma-app-jet.vercel.app
 
 
 ## ✨ Features  
