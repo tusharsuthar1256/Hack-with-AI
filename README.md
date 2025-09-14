@@ -62,3 +62,30 @@ Follow these steps to run Companion Hub locally:
 ```bash
 git clone https://github.com/your-username/companion-hub.git
 cd companion-hub
+
+### 2. Setup Environment Variables
+
+Create a .env.local file in the project root and add:
+
+# Clerk
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_example1234567890
+CLERK_SECRET_KEY=sk_test_example1234567890
+
+# Clerk - Custom Auth Setup
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/
+NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/
+
+# Supabase config
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key_here
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key_here
+
+# Vapi
+NEXT_PUBLIC_VAPI_WEB_TOKEN=example-vapi-web-token-123456
+
+# Sentry (optional)
+SENTRY_AUTH_TOKEN=example-sentry-token-123456
+
+scrrenshot :
+Vudeo link : https://drive.google.com/file/d/1_qnAkDCt99n3TGAg6MqT0AEcENC-TR1Q/view?usp=drive_link
