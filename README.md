@@ -65,10 +65,10 @@ cd companion-hub
 ```
 
 ### 2. Setup Environment Variables
-```bash
 
 Create a .env.local file in the project root and add:
 
+```bash
 # Clerk
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_example1234567890
 CLERK_SECRET_KEY=sk_test_example1234567890
