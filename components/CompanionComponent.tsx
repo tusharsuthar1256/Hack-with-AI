@@ -84,7 +84,7 @@ const CompanionComponent = ({
       vapi.off("speech-start", onSpeechStart);
       vapi.off("speech-end", onSpeechEnd);
     };
-  }, []);
+  }, [companionId]);
 
   const toggleMicrophone = () => {
     const isMuted = vapi.isMuted();
@@ -103,7 +103,7 @@ const CompanionComponent = ({
           serverMessages : [] ,
      }
 
-     // @ts-expect-error
+     // @ts-expect-error: vapi.start method signature is not fully typed in the SDK
      vapi.start(configureAssistant(voice,style),assistantOverride)
   };
 

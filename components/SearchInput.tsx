@@ -8,33 +8,31 @@ const SearchInput = () => {
      const pathname = usePathname();
      const router = useRouter();
      const searchParams = useSearchParams();
-     const topic = searchParams.get('topic') || '';
+     const [searchQuery, setSearchQuery] = useState('');
 
-     const [searchQuery,setSearchQuery] = useState('');
- 
      useEffect(() => {
-          const delayDebounce = setTimeout(() => {
-                if(searchQuery){
-               const newUrl = formUrlQuery({
-                    params:searchParams.toString(),
-                    key:'topic',
-                    value:searchQuery,
-               })
-
-               router.push(newUrl,{scroll: false});
-          }else{
-               if (pathname === '/companions') {
-                    const newUrl = removeKeysFromUrlQuery({
-                         params: searchParams.toString(),
-                         keysToRemove: ['topic'],
+          const timeout = setTimeout(() => {
+               if(searchQuery){
+                    const newUrl = formUrlQuery({
+                         params:searchParams.toString(),
+                         key:'topic',
+                         value:searchQuery,
                     })
-                    router.push(newUrl, { scroll: false });
-                    
+
+                    router.push(newUrl,{scroll: false});
+               } else {
+                    if (pathname === '/companions') {
+                         const newUrl = removeKeysFromUrlQuery({
+                              params: searchParams.toString(),
+                              keysToRemove: ['topic'],
+                         })
+                         router.push(newUrl, { scroll: false });
+                    }
                }
-          }
-          },500)
-         
-     },[searchQuery,router,pathname,searchParams]);
+          }, 500)
+
+          return () => clearTimeout(timeout);
+     }, [searchQuery, router, pathname, searchParams]);
 
   return (
     <div className='relative border border-black rounded-lg items-center flex gap-2 px-2 py-1 h-fit'>

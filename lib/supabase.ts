@@ -1,5 +1,4 @@
 import { createClient } from "@supabase/supabase-js"
-import {auth} from '@clerk/nextjs/server'
 
 export const createSupabaseClient = () => {
      const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
