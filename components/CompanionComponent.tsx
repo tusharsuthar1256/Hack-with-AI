@@ -103,7 +103,7 @@ const CompanionComponent = ({
           serverMessages : [] ,
      }
 
-     // @ts-except-error
+     // @ts-expect-error
      vapi.start(configureAssistant(voice,style),assistantOverride)
   };
 
@@ -127,8 +127,8 @@ const CompanionComponent = ({
                   callStatus === CallStatus.INACTIVE
                   ? "opacity-100"
                   : "opacity-0",
-                callStatus == CallStatus.CONNECTING &&
-                  "opacity-100 animate-pluse"
+               callStatus == CallStatus.CONNECTING &&
+                  "opacity-100 animate-pulse"
               )}
             >
               <Image
@@ -202,7 +202,7 @@ const CompanionComponent = ({
                         if (message.role === "assistant") {
                             return (
                                 <p key={index} className="max-sm:text-sm">
-                                    {name.split(' ')[0].replace('/[.,]/g,','')}: {message.content}
+                                    {name.split(' ')[0].replace(/[.,]/g,'')}: {message.content}
                                 </p>
                             );
                         }else{
