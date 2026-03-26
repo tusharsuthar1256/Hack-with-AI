@@ -42,12 +42,18 @@ export const getAllCompanions = async ({limit=10,page=1,subject,topic}:GetAllCom
 
      const {data : companions, error} = await query;
 
-     if (error || !companions) {
-          throw new Error(error?.message || "Failed to fetch companions");
+     if (error) {
+          console.error("Supabase connection failed. Check your Supabase URL (currently: " + process.env.NEXT_PUBLIC_SUPABASE_URL + ")");
+          console.error("Error details:", error);
+          // Return empty array to prevent page crash (500 error)
+          return [];
+     }
+
+     if (!companions) {
+          throw new Error("No companions found");
      }
 
      return companions;
-     
 }
 
 export const getCompanion = async (id:string) => {
@@ -87,7 +93,10 @@ export const getRecentSessions = async(limit=10) => {
           .order('created_at',{ascending:false})
           .limit(limit)
 
-     if(error) return new Error(error.message);
+     if(error) {
+          console.error("Error in getRecentSessions:", error);
+          return [];
+     }
 
      return data.map(({companions}) => companions)
 }
@@ -126,13 +135,17 @@ export const newCompanionPermissions = async () => {
 
      const supabase = createSupabaseClient();
 
-     let limit = 0;
+     let limit = 1; // Default free limit
 
-     if (has({plan:'pro'})) {
-          return true
-     }else if(has({feature:"5_companion_limit"})){
+     if (has({ plan: 'pro' }) || has({ plan: 'pro-companion' })) {
+          return true;
+     } else if (has({ plan: 'core' }) || has({ plan: 'core-learner' })) {
+          limit = 10;
+     } else if (has({ plan: 'basic' })) {
+          limit = 3;
+     } else if (has({ feature: "5_companion_limit" })) {
           limit = 5;
-     }else if(has({feature:"10_companion_limit"})){
+     } else if (has({ feature: "10_companion_limit" })) {
           limit = 10;
      }
 
